@@ -1,3 +1,5 @@
+// to do: add lighten mode / darken mode
+
 const CONTAINER = document.querySelector('#container');
 const CONTAINER_WIDTH = CONTAINER.clientWidth;
 const CONTAINER_HEIGHT = CONTAINER.clientHeight;
@@ -5,9 +7,11 @@ const INCREASE_SIZE_BUTTON = document.querySelector('#increase-size');
 const DECREASE_SIZE_BUTTON = document.querySelector('#decrease-size');
 const SIZE_DISPLAY = document.querySelector('#current-size-display');
 const CLEAR_BUTTON = document.querySelector('#clear-button');
+const RAINBOW_MODE = document.querySelector('#rainbow-mode');
 
 let gridSize = 32;
 let currentColor = `rgb(255, 0, 0)`;
+let rainbowMode = true;
 
 CLEAR_BUTTON.addEventListener('click', () => {
     clearEverything();
@@ -37,6 +41,12 @@ DECREASE_SIZE_BUTTON.addEventListener('click', () => {
     }
 });
 
+RAINBOW_MODE.addEventListener('click', () => {
+    rainbowMode = !rainbowMode;
+    rainbowMode ? RAINBOW_MODE.style.backgroundColor = getRandomColor() :
+    RAINBOW_MODE.style.backgroundColor = 'white';
+});
+
 function drawGrid() {
     for (let i = 0; i < gridSize ** 2; i++) {
 
@@ -48,7 +58,13 @@ function drawGrid() {
 
         square.addEventListener('mouseover', (e) => {
             if (e.buttons == 1) {
-                square.style.backgroundColor = currentColor;
+                if (rainbowMode) {
+                    square.style.backgroundColor = getRandomColor();
+                }
+
+                else {
+                    square.style.backgroundColor = currentColor;
+                }                
             }
         });
     }
@@ -63,6 +79,14 @@ function clearEverything() {
         }
     }
     drawGrid();
+}
+
+function getRandomColor() {
+    return (`rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`);
+}
+
+function getRandomNumber() {
+    return Math.floor(Math.random() * 255);
 }
 
 drawGrid();
