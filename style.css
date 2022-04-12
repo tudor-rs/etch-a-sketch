@@ -1,0 +1,48 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex: 0;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+#container {
+    border: solid black 1px;
+    margin: 0;
+    padding: 0;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 0 700px;
+}
+
+.square {
+    margin: 0px;
+    padding: 0px;
+}
+
+#controls {
+    margin-top: 25px;
+}
+
+#top-container {
+    border: solid black 1px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.size-button {
+    margin: 15px 0;
+    border: solid black 1px;
+}
+
+#bottom-container {
+    border: solid black 1px;
+    text-align: center;
+}
