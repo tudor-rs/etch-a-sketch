@@ -1,4 +1,4 @@
-// to do: add lighten mode / darken mode
+// to do: add lighten mode / darken mode via string manipulation
 
 const CONTAINER = document.querySelector('#container');
 const CONTAINER_WIDTH = CONTAINER.clientWidth;
@@ -10,8 +10,8 @@ const CLEAR_BUTTON = document.querySelector('#clear-button');
 const RAINBOW_MODE = document.querySelector('#rainbow-mode');
 
 let gridSize = 32;
-let currentColor = `rgb(255, 0, 0)`;
-let rainbowMode = true;
+let currentColor = `rgb(0, 0, 0)`;
+let rainbowMode = false;
 
 CLEAR_BUTTON.addEventListener('click', () => {
     clearEverything();
@@ -59,7 +59,9 @@ function drawGrid() {
         square.addEventListener('mouseover', (e) => {
             if (e.buttons == 1) {
                 if (rainbowMode) {
-                    square.style.backgroundColor = getRandomColor();
+                    let randomColor = getRandomColor();
+                    square.style.backgroundColor = randomColor;
+                    RAINBOW_MODE.style.backgroundColor = randomColor;
                 }
 
                 else {
