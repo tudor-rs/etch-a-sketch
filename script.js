@@ -43,8 +43,8 @@ DECREASE_SIZE_BUTTON.addEventListener('click', () => {
 
 RAINBOW_MODE.addEventListener('click', () => {
     rainbowMode = !rainbowMode;
-    rainbowMode ? RAINBOW_MODE.style.backgroundColor = getRandomColor() :
-    RAINBOW_MODE.style.backgroundColor = 'white';
+    rainbowMode ? RAINBOW_MODE.classList.add('rainbowActive') :
+    RAINBOW_MODE.classList.remove('rainbowActive');
 });
 
 function drawGrid() {
@@ -61,7 +61,6 @@ function drawGrid() {
                 if (rainbowMode) {
                     let randomColor = getRandomColor();
                     square.style.backgroundColor = randomColor;
-                    RAINBOW_MODE.style.backgroundColor = randomColor;
                 }
 
                 else {
