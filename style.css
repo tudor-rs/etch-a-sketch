@@ -1,0 +1,64 @@
+html {
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, rgba(180, 126, 58, 1) 0%,
+            rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex: 0;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+#container {
+    margin: 0;
+    padding: 0;
+    width: 768px;
+    height: 768px;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 0 0 700px;
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 0.2);
+}
+
+.square {
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+#controls {
+    width: 100px;
+    margin: 10px;
+    font-size: 0.9em;
+    color: white;
+}
+
+#top-container {
+    text-align: center;
+}
+
+.button {
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 0.2);
+    padding: 5px;
+    margin: 5px;
+    background-color: rgba(255, 176, 57, 0.3);
+}
+
+.button:active {
+    background-color: rgba(255, 176, 57, 0.7);
+}
+
+#bottom-container {
+    text-align: center;
+}
+
+.rainbowActive {
+    background-image: linear-gradient(90deg, rgb(123, 255, 0),
+            rgb(255, 0, 0));
+}
